@@ -6,12 +6,12 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home';
 import OrderPizza from './components/OrderPizza';
 import Success from './components/Success';
+import { Switch, Route } from 'react-router-dom';
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
+    <div className='route-section'>
       <Switch>
         <Route exact path="/">
           <Home />
@@ -23,7 +23,7 @@ function App() {
           <Success />
         </Route>
       </Switch>
-    </>
+    </div>
   )
 }
 

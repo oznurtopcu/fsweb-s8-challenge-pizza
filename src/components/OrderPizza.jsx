@@ -1,5 +1,15 @@
-import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
+import Header from "./Header";
+import OrderForm from "./OrderForm";
 
 export default function OrderPizza() {
 
+    return (
+        <>
+            <Header/>
+            <div className="form-section">
+                <OrderForm/>
+            </div>
+
+        </>
+    )
 }
