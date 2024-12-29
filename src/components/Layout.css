@@ -1,0 +1,47 @@
+*{
+ border: 1px solid purple;
+}
+
+header {
+    background-color: #CE2829;
+    display: flex;
+    justify-content: center;
+    padding: 1.5rem;
+}
+
+header img {
+    width: 20rem;
+}
+
+.order-page{
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.form-content {
+    width: 500px;
+    margin: auto;
+    display: flex;
+    gap: 0.5rem;
+}
+
+.price-info {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.select-content {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.checkbox-list {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}

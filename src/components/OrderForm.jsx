@@ -3,17 +3,21 @@ import sampleData from '../sampleData';
 export default function OrderForm() {
     const {baslik, fiyat, puan, yorumSayisi, aciklama, ekstraMalzeme} = sampleData;
     return (
-        <Form>
-            <h3>{baslik}</h3>
-            <p>{fiyat}₺</p>
-            <p>{puan}</p>
-            <p>({yorumSayisi})</p>
+        <div className='form-content'>
+            <Form>
+            <h4>{baslik}</h4>
+            <div className='price-info'>
+                <p>{fiyat}₺</p>
+                <p>{puan}</p>
+                <p>({yorumSayisi})</p>
+            </div>
             <p>{aciklama}</p>
-            <FormGroup>
+
+            <div className='select-content'>
                 <FormGroup tag="fieldset">
-                    <legend>
-                    Boyut seç *
-                    </legend>
+                    <Label>
+                        Boyut seç*
+                    </Label>
                     <FormGroup check>
                         <Input
                             name="small"
@@ -47,11 +51,11 @@ export default function OrderForm() {
                 </FormGroup>
 
                 <FormGroup>
-                    <Label for="exampleSelect">
+                    <Label for="select">
                         Hamur Kalınlığı
                     </Label>
                     <Input
-                    id="exampleSelect"
+                    id="select"
                     name="select"
                     type="select"
                     >
@@ -66,13 +70,14 @@ export default function OrderForm() {
                     </option>
                     </Input>
                 </FormGroup>
-            </FormGroup>
-
+            </div>
+            
             <div>
                <h4>Ek Malzemeler</h4>
                <p>En fazla 10 malzeme seçebilirsiniz.</p>
             </div>
-            <FormGroup>
+            
+            <FormGroup className='checkbox-list'>
                 {ekstraMalzeme.map((malzeme,index) => {
                     return (<FormGroup key={index} check>
                         <Input type="checkbox"/>
@@ -106,5 +111,7 @@ export default function OrderForm() {
                 />
             </FormGroup>
         </Form>
+        </div>
+        
     );
 }
