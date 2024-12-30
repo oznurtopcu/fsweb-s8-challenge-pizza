@@ -5,7 +5,7 @@ import './reset.css';
 import './App.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import Home from './components/Home/Home';
-import OrderPizza from './components/OrderPizza';
+import OrderPizza from './components/OrderPizza/OrderPizza';
 import Success from './components/Success';
 import { Switch, Route } from 'react-router-dom';
 

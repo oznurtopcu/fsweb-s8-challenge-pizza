@@ -1,4 +1,4 @@
-import Header from "./Header/Header";
+import Header from "../Header/Header";
 import OrderForm from "./OrderForm";
 
 export default function OrderPizza() {
@@ -7,9 +7,7 @@ export default function OrderPizza() {
         <div className="order-page">
             <Header/>
             <main>
-                <div className="form-section">
-                    <OrderForm/>
-                </div>
+                <OrderForm/>
             </main>
         </div>
     )
