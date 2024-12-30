@@ -1,13 +1,16 @@
 import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
-import sampleData from '../sampleData';
+import sampleData from '../../sampleData';
+import './OrderForm.css';
+import {Link} from 'react-router-dom';
+
 export default function OrderForm() {
     const {baslik, fiyat, puan, yorumSayisi, aciklama, ekstraMalzeme} = sampleData;
     return (
         <div className='form-content'>
             <Form>
-            <h4>{baslik}</h4>
+            <h4 className='label'>{baslik}</h4>
             <div className='price-info'>
-                <p>{fiyat}₺</p>
+                <h4 className='label'>{fiyat}₺</h4>
                 <p>{puan}</p>
                 <p>({yorumSayisi})</p>
             </div>
@@ -15,7 +18,7 @@ export default function OrderForm() {
 
             <div className='select-content'>
                 <FormGroup tag="fieldset">
-                    <Label>
+                    <Label className='label'>
                         Boyut seç*
                     </Label>
                     <FormGroup check>
@@ -51,7 +54,7 @@ export default function OrderForm() {
                 </FormGroup>
 
                 <FormGroup>
-                    <Label for="select">
+                    <Label for="select" className='label'>
                         Hamur Kalınlığı
                     </Label>
                     <Input
@@ -73,8 +76,8 @@ export default function OrderForm() {
             </div>
             
             <div>
-               <h4>Ek Malzemeler</h4>
-               <p>En fazla 10 malzeme seçebilirsiniz.</p>
+               <p className='label'>Ek Malzemeler</p>
+               <p>En fazla 10 malzeme seçebilirsiniz.(Her seçim 5₺)</p>
             </div>
             
             <FormGroup className='checkbox-list'>
@@ -89,7 +92,7 @@ export default function OrderForm() {
                 })}
             </FormGroup>
             <FormGroup>
-                <Label for="isim">
+                <Label for="isim" className='label'>
                 İsim
                 </Label>
                 <Input
@@ -100,7 +103,7 @@ export default function OrderForm() {
                 />
             </FormGroup>
             <FormGroup>
-                <Label for="siparisNotu">
+                <Label for="siparisNotu" className='label'>
                 Sipariş Notu
                 </Label>
                 <Input
@@ -110,6 +113,23 @@ export default function OrderForm() {
                 type="textarea"
                 />
             </FormGroup>
+            <hr/>
+            <div className='order-card'>
+                <div className='order-amount'>
+                    <button className='left'>-</button>
+                    <p>0</p>
+                    <button className='right'>+</button>
+                </div>
+                <div className='order-sum'>
+                    <div>
+                        <p className='label'>Sipariş Toplamı</p>
+                        <p>Seçimler</p>
+                        <p>Toplam</p>
+                    </div>
+                    <Link to="/success"><button className='submitButton'>SİPARİŞ VER</button></Link>
+                </div>
+
+            </div>
         </Form>
         </div>
         
