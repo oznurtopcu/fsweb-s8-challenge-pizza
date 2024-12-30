@@ -1,12 +1,9 @@
-*{
- border: 1px solid purple;
-}
-
 header {
     background-color: #CE2829;
     display: flex;
     justify-content: center;
     padding: 1.5rem;
+    height: auto;
 }
 
 header img {
