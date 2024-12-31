@@ -43,6 +43,12 @@ export default function OrderForm() {
         setIsValid(() => Object.keys(errorData).length === 0 ? true : false);
     }
 
+    //useEffect
+    useEffect(()=> {
+        console.log(data);
+        formValidation();
+    }, [data]);
+
     return (
         <div className='form-content'>
             <Form onSubmit={handleSubmit}>
