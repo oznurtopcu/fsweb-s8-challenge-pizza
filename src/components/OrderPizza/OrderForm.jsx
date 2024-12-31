@@ -58,6 +58,15 @@ export default function OrderForm() {
         if(type === 'checkbox'){
             const toppings = data[name];
             setData({...data, extra: toppings.includes(value) ? toppings.filter((item) => item !== value) : [...toppings,value]});
+        }else if(type === 'button'){
+            if(value === 'azalt'){
+                setMiktar(miktar>1 ? miktar-1:1);
+                setData({...data, [name]: miktar});
+            }
+            if(value === 'arttir'){
+                setMiktar(miktar+1);
+                setData({...data, [name]: miktar});
+            }
         }else {
             setData({...data, [name]:value});
         }
@@ -100,7 +109,7 @@ export default function OrderForm() {
                 <hr/>
 
                 <div className='order-card'>
-                    <Summary data={data} setData={setData} secimler={secimler} miktar={miktar} setMiktar={setMiktar} toplam={toplam} isValid={isValid}/>
+                    <Summary miktar={miktar} secimler={secimler} toplam={toplam} isValid={isValid} handleChange={handleChange}/>
                 </div>
             </Form>
         </div>

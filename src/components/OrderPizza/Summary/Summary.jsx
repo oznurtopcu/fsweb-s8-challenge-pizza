@@ -3,22 +3,16 @@ import { FormGroup, Label, Input, Button, FormFeedback} from 'reactstrap';
 
 export default function Summary(props) {
 
-    const {data, setData, miktar, setMiktar, secimler, toplam, isValid} = props;
+    const {miktar, secimler, toplam, isValid, handleChange} = props;
 
     return(
         <>
             {/*adet arttırıp azaltma bölümü*/}
             <div className='order-amount'>
-                    <button className='left' type="button" onClick={() => {
-                        setMiktar(miktar>1 ? miktar-1:1);
-                        setData({...data, adet: miktar});
-                        }}>-
+                    <button className='left' type="button" name="adet" value="azalt" onClick={handleChange}>-
                     </button>
                     <p>{miktar}</p>
-                    <button className='right' type="button" onClick={() => {
-                        setMiktar(miktar+1);
-                        setData({...data, adet: miktar});
-                        }}>+
+                    <button className='right' type="button" name="adet" value="arttir" onClick={handleChange}>+
                     </button>
             </div>
             
