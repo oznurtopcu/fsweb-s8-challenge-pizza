@@ -29,7 +29,7 @@ export default function Summary(props) {
                             <p>{toplam}₺</p>
                         </div>
                 </div>
-                <button className='submitButton' disabled={!isValid}>SİPARİŞ VER</button>
+                <button className='submitButton' data-cy='submitButton' disabled={!isValid}>SİPARİŞ VER</button>
             </div>
         </>
     )

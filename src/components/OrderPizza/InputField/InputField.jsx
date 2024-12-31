@@ -16,6 +16,7 @@ export default function InputField(props) {
                     placeholder="Lütfen isminizi giriniz"
                     type="text"
                     onChange={handleChange}
+                    data-cy='isim'
                 />
             </FormGroup>
 

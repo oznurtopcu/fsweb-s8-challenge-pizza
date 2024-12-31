@@ -15,7 +15,7 @@ export default function ToppingSelector(props) {
                     return (
                     <FormGroup key={index} check>
                         <Label check>
-                        <Input type="checkbox" name="extra" id="extra" value={malzeme} onChange={handleChange}/>
+                        <Input type="checkbox" name="extra" id="extra" value={malzeme} onChange={handleChange} data-cy='checkbox'/>
                         {' '}
                         {malzeme}
                         </Label>

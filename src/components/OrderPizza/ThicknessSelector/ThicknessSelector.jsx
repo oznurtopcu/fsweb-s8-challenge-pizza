@@ -15,6 +15,7 @@ export default function ThicknessSelector(props) {
                 id="doughType"
                 name="kalinlik"
                 type="select"
+                data-cy='select'
                 onChange={handleChange}
                 >
                 <option>
