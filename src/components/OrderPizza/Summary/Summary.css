@@ -63,3 +63,10 @@
     border-bottom-left-radius: 5px;
     border-bottom-right-radius: 5px;
 }
+
+@media(max-width: 768px) {
+    .order-amount {
+        width: 100%;
+        justify-content: center;
+    }
+}
