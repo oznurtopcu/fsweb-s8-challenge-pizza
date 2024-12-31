@@ -1,0 +1,9 @@
+.label {
+    font-weight: 600;
+}
+
+.checkbox-list {
+    display: grid;
+    grid-template-columns: 30% 30% 30%;
+    justify-content: space-between;
+}
