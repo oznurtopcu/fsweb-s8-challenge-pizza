@@ -1,8 +1,9 @@
 import {Form, FormGroup, Label, Input, Button, FormFeedback} from 'reactstrap';
 import sampleData from '../../sampleData';
 import './OrderForm.css';
-import {Link} from 'react-router-dom';
 import { useEffect, useState } from 'react';
+import { useHistory } from 'react-router-dom';
+import axios from 'axios';
 import SizeSelector from './SizeSelector/SizeSelector';
 import ThicknessSelector from './ThicknessSelector/ThicknessSelector';
 import ToppingSelector from './ToppingSelector/ToppingSelector';
@@ -48,6 +49,20 @@ export default function OrderForm() {
         console.log(data);
         formValidation();
     }, [data]);
+
+
+
+    const handleSubmit = (event) => {
+        event.preventDefault();
+
+        console.log("istek atılabiliyor!!");
+        axios.post('https://reqres.in/api/pizza', data)
+        .then(response => {
+            console.log(response)
+            history.push('/success')})
+        .catch(error => console.error(error));
+        setData(initialData);
+    }
 
     return (
         <div className='form-content'>
