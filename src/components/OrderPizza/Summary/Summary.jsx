@@ -18,13 +18,13 @@ export default function Summary(props) {
             
             {/*sipariş toplamı bölümü*/}
             <div className='order-sum'>
-                <div>
+                <div className='order-addition'>
                     <p className='label'>Sipariş Toplamı</p>
-                        <div>
+                        <div id='addition'>
                             <p>Seçimler</p>
                             <p>{secimler}₺</p>
                         </div>
-                        <div>
+                        <div id='addition'>
                             <p>Toplam</p>
                             <p>{toplam}₺</p>
                         </div>

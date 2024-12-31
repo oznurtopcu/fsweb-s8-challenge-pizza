@@ -30,18 +30,27 @@
     border: 0.2px solid var(--primary-gray);
     width: 3rem;
     height: 3rem;
-    text-align: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .order-sum {
     flex: 1 1 auto;
 }
 
-.order-sum div {
+.order-addition {
     padding: 1rem 1rem 0 1rem;
     border: 0.2px solid var(--primary-gray);
     border-top-left-radius: 5px;
     border-top-right-radius: 5px;
+}
+
+#addition {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    font-weight: 400;
 }
 
 .submitButton {

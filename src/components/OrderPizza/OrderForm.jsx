@@ -76,11 +76,9 @@ export default function OrderForm() {
 
     const handleSubmit = (event) => {
         event.preventDefault();
-
-        console.log("istek atılabiliyor!!");
         axios.post('https://reqres.in/api/pizza', data)
         .then(response => {
-            console.log(response)
+            console.log(response.data)
             history.push('/success')})
         .catch(error => console.error(error));
         setData(initialData);
