@@ -6,6 +6,7 @@ export default function SizeSelector(props) {
     const {handleChange} = props;
 
     return(
+        //özellikler map ile dönülecek
         <FormGroup>
                         <Label className='label'>
                             Boyut seç*
