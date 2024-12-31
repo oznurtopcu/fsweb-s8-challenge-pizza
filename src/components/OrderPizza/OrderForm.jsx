@@ -2,6 +2,7 @@ import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 import sampleData from '../../sampleData';
 import './OrderForm.css';
 import {Link} from 'react-router-dom';
+import SizeSelector from './SizeSelector/SizeSelector';
 import ProductInfo from './ProductInfo/ProductInfo';
 
 export default function OrderForm() {
