@@ -33,6 +33,16 @@ export default function OrderForm() {
     const secimler = (data.extra.length*5)*miktar;
     const toplam = (+fiyat + secimler)*miktar;
 
+    const formValidation = () => {
+        const errorData = {};
+        if(!data.boyut) errorData.boyut = "Lütfen pizza boyutu seçiniz!";
+        if(data.extra.length<4) errorData.extra="En az 4 malzeme seçimi yapılmalıdır!";
+        if(data.extra.length>10) errorData.extra = "En fazla 10 malzeme seçimi yapılabilir!";
+        if(data.isim.length<3) errorData.isim = "Girilen isim 3 karakterden daha az olamaz!";
+        setErrors(errorData);
+        setIsValid(() => Object.keys(errorData).length === 0 ? true : false);
+    }
+
     return (
         <div className='form-content'>
             <Form onSubmit={handleSubmit}>
