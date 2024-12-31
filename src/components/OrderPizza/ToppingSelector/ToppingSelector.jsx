@@ -14,13 +14,14 @@ export default function ToppingSelector(props) {
                 {ekstraMalzeme.map((malzeme,index) => {
                     return (
                     <FormGroup key={index} check>
+                        <Label check>
                         <Input type="checkbox" name="extra" id="extra" value={malzeme} onChange={handleChange}/>
                         {' '}
-                        <Label htmlFor='extra' check>
                         {malzeme}
                         </Label>
-                    </FormGroup>)
-                    })}
+                    </FormGroup>);
+                    })
+                }
             </FormGroup>
         
         </>
