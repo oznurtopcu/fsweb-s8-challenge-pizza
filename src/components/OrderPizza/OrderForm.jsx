@@ -119,7 +119,7 @@ export default function OrderForm() {
                     <SizeSelector handleChange={handleChange}/>
                     
                     {/*hamur kalınlığı seçim bölümü*/}
-                    <ThicknessSelector data={data} setData={setData}/>
+                    <ThicknessSelector handleChange={handleChange}/>
                 </div>
                 
                 {/*ekstra malzeme seçim bölümü*/}

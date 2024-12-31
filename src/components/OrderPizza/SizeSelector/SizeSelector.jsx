@@ -3,7 +3,7 @@ import { FormGroup, Label, Input, Button, FormFeedback} from 'reactstrap';
 
 export default function SizeSelector(props) {
 
-    const {data, setData, handleChange} = props;
+    const {handleChange} = props;
 
     return(
         <FormGroup>

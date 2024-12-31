@@ -3,9 +3,10 @@ import { FormGroup, Label, Input, Button, FormFeedback} from 'reactstrap';
 
 export default function ThicknessSelector(props) {
 
-    const {data, setData} = props;
+    const {handleChange} = props;
 
     return(
+        //özellikler map ile dönülecek
         <FormGroup>
             <Label for="doughType" className='label'>
                 Hamur Kalınlığı
@@ -14,7 +15,7 @@ export default function ThicknessSelector(props) {
                 id="doughType"
                 name="kalinlik"
                 type="select"
-                onChange={(e) => setData({...data, kalinlik:e.target.value})}
+                onChange={handleChange}
                 >
                 <option>
                     İnce
