@@ -20,7 +20,8 @@ const initialData = {
     adet: 1
 };
 
-export default function OrderForm() {
+export default function OrderForm(props) {
+    const {pageRouter} = props;
     //state tanımlamaları
     const [miktar, setMiktar] = useState(1);
     const [data, setData] = useState(initialData);
@@ -46,14 +47,12 @@ export default function OrderForm() {
 
     //useEffect
     useEffect(()=> {
-        console.log(data);
         formValidation();
     }, [data]);
 
     const handleChange = (event) => {
 
         const {name, value, type} = event.target;
-        console.log(name, type, value);
 
         if(type === 'checkbox'){
             const toppings = data[name];
@@ -78,8 +77,9 @@ export default function OrderForm() {
         event.preventDefault();
         axios.post('https://reqres.in/api/pizza', data)
         .then(response => {
-            console.log(response.data)
-            history.push('/success')})
+            console.log(response.data);
+            //history.push('/success');
+            pageRouter('success')})
         .catch(error => console.error(error));
         setData(initialData);
     }
