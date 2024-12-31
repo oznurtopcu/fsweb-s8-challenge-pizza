@@ -2,20 +2,11 @@ import {Form, FormGroup, Label, Input, Button} from 'reactstrap';
 import sampleData from '../../sampleData';
 import './OrderForm.css';
 import {Link} from 'react-router-dom';
+import ProductInfo from './ProductInfo/ProductInfo';
 
 export default function OrderForm() {
-    const {baslik, fiyat, puan, yorumSayisi, aciklama, ekstraMalzeme} = sampleData;
     return (
         <div className='form-content'>
-            <Form>
-            <h4 className='label'>{baslik}</h4>
-            <div className='price-info'>
-                <h4 className='label'>{fiyat}₺</h4>
-                <p>{puan}</p>
-                <p>({yorumSayisi})</p>
-            </div>
-            <p>{aciklama}</p>
-
             <div className='select-content'>
                 <FormGroup tag="fieldset">
                     <Label className='label'>
