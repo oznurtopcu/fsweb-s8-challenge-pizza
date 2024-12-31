@@ -5,6 +5,7 @@ import {Link} from 'react-router-dom';
 import SizeSelector from './SizeSelector/SizeSelector';
 import ThicknessSelector from './ThicknessSelector/ThicknessSelector';
 import ToppingSelector from './ToppingSelector/ToppingSelector';
+import InputField from './InputField/InputField';
 import ProductInfo from './ProductInfo/ProductInfo';
 
 export default function OrderForm() {
