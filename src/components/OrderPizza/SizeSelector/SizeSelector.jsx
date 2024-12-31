@@ -3,7 +3,7 @@ import { FormGroup, Label, Input, Button, FormFeedback} from 'reactstrap';
 
 export default function SizeSelector(props) {
 
-    const {data, setData} = props;
+    const {data, setData, handleChange} = props;
 
     return(
         <FormGroup>
@@ -16,7 +16,7 @@ export default function SizeSelector(props) {
                                 type="radio"
                                 id="small"
                                 value="Küçük"
-                                onClick={(e) => setData({...data, boyut:e.target.value})}
+                                onClick={handleChange}
                             />
                             <Label htmlFor='small'>
                                 Küçük
@@ -28,7 +28,7 @@ export default function SizeSelector(props) {
                                 type="radio"
                                 id="medium"
                                 value="Orta"
-                                onClick={(e) => setData({...data, boyut:e.target.value})}
+                                onClick={handleChange}
                             />
                             <Label htmlFor='medium'>
                                 Orta
@@ -40,7 +40,7 @@ export default function SizeSelector(props) {
                                 type="radio"
                                 id="large"
                                 value="Büyük"
-                                onClick={(e) => setData({...data, boyut:e.target.value})}
+                                onClick={handleChange}
                             />
                             <Label htmlFor='large'>
                                 Büyük

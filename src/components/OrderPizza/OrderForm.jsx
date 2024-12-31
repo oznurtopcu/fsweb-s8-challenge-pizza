@@ -116,7 +116,7 @@ export default function OrderForm() {
                 
                 <div className='select-content'>
                     {/*pizza boyutu seçim bölümü*/}
-                    <SizeSelector data={data} setData={setData}/>
+                    <SizeSelector handleChange={handleChange}/>
                     
                     {/*hamur kalınlığı seçim bölümü*/}
                     <ThicknessSelector data={data} setData={setData}/>
