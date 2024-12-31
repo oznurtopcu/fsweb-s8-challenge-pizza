@@ -19,6 +19,9 @@ export default function ThicknessSelector(props) {
                 onChange={handleChange}
                 >
                 <option>
+                    Seçiniz...
+                </option>
+                <option>
                     İnce
                 </option>
                 <option>
