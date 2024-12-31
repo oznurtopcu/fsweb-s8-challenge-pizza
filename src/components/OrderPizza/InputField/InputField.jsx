@@ -3,7 +3,7 @@ import { FormGroup, Label, Input, Button, FormFeedback} from 'reactstrap';
 
 export default function InputField(props) {
 
-    const {data, setData} = props;
+    const {handleChange} = props;
     return (
         <>
             <FormGroup>
@@ -15,7 +15,7 @@ export default function InputField(props) {
                     name="isim"
                     placeholder="Lütfen isminizi giriniz"
                     type="text"
-                    onChange={(e) => setData({...data, isim: e.target.value})}
+                    onChange={handleChange}
                 />
             </FormGroup>
 
@@ -28,7 +28,7 @@ export default function InputField(props) {
                     name="siparisNotu"
                     placeholder="Siparişine eklemek istediğin bir not var mı?"
                     type="textarea"
-                    onChange={(e) => setData({...data, siparisNotu: e.target.value})}
+                    onChange={handleChange}
                 />
             </FormGroup>
         

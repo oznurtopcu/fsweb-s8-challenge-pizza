@@ -60,38 +60,7 @@ export default function OrderForm() {
             setData({...data, extra: toppings.includes(value) ? toppings.filter((item) => item !== value) : [...toppings,value]});
         }else {
             setData({...data, [name]:value});
-            //sizeSelector, thicknessSelector, inputField
         }
-
-        /*sizeSelector --> 
-        (e) => setData({...data, boyut:e.target.value})*/
-
-        /*thicknessSelector --> 
-        (e) => setData({...data, kalinlik:e.target.value})*/
-
-        /*toppingSelector -->
-        const handleChecked = (event) => {
-        const {value, name} = event.target;
-        const extralar = data[name];
-        setData({...data, extra: extralar.includes(value) ? extralar.filter((item) => item !== value) : [...extralar,value]})}*/
-
-        /*inputField -->
-        (e) => setData({...data, isim: e.target.value})*/
-
-        /*summary - sayı azalt -->
-        () => {
-            setMiktar(miktar>1 ? miktar-1:1);
-            setData({...data, adet: miktar});
-        }*/
-
-        /*summary - sayı arttır --> 
-        () => {
-            setMiktar(miktar+1);
-            setData({...data, adet: miktar});
-        }*/
-
-
-
 
     }
 
@@ -126,7 +95,7 @@ export default function OrderForm() {
                 <ToppingSelector ekstraMalzeme={ekstraMalzeme} handleChange={handleChange}/>
                 
                 {/*isim ve sipariş notu input bölümü*/}
-                <InputField data={data} setData={setData}/>
+                <InputField handleChange={handleChange}/>
 
                 <hr/>
 
