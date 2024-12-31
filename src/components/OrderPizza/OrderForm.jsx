@@ -123,7 +123,7 @@ export default function OrderForm() {
                 </div>
                 
                 {/*ekstra malzeme seçim bölümü*/}
-                <ToppingSelector ekstraMalzeme={ekstraMalzeme} data={data} setData={setData} />
+                <ToppingSelector ekstraMalzeme={ekstraMalzeme} handleChange={handleChange}/>
                 
                 {/*isim ve sipariş notu input bölümü*/}
                 <InputField data={data} setData={setData}/>
