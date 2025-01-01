@@ -35,6 +35,7 @@ export default function OrderForm(props) {
     const secimler = (data.extra.length*5)*miktar;
     const toplam = (+fiyat + secimler)*miktar;
 
+    //formValidation
     const formValidation = () => {
         const errorData = {};
         if(!data.boyut) errorData.boyut = "Lütfen pizza boyutu seçiniz!";
@@ -54,7 +55,7 @@ export default function OrderForm(props) {
     const handleChange = (event) => {
 
         const {name, value, type} = event.target;
-
+        //input type'a bağlı gerçekleşen handle change işlemleri
         if(type === 'checkbox'){
             const toppings = data[name];
             setData({...data, extra: toppings.includes(value) ? toppings.filter((item) => item !== value) : [...toppings,value]});
@@ -73,7 +74,7 @@ export default function OrderForm(props) {
 
     }
 
-
+    //handlesubmit
     const handleSubmit = (event) => {
         event.preventDefault();
         axios.post('https://reqres.in/api/pizza', data)
