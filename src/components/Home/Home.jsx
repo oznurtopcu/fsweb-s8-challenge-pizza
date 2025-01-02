@@ -5,7 +5,6 @@ import { Link } from 'react-router-dom';
 export default function Home(props) {
     const {pageRouter} = props;
     return(
-        <main>
             <div className="home-image">
                 <div className="home-content">
                     <img src={logo} alt="Logo" className="logo"/>
@@ -17,7 +16,5 @@ export default function Home(props) {
                     <button className="submit-button" onClick={() => pageRouter('order-pizza')}>ACIKTIM</button>
                 </div>
             </div>
-        </main>
-        
     );
 }

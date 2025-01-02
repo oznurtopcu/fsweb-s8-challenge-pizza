@@ -2,6 +2,10 @@ body, html{
     height: 100%;
     max-width: 1500px;
 }
+main {
+    display: flex;
+    width: 100%;
+}
 
 #root {
     --primary-red: #ce2829;

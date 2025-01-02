@@ -43,10 +43,12 @@ function App() {
   return (
     <>
       {currentPage !== 'home' && <Header />}
-      {currentPage === 'home' && <Home pageRouter={pageRouter} />}
-      {currentPage === 'order-pizza' && <OrderPizza pageRouter={pageRouter} initialData={initialData} data={data} setData={setData} setDataResponse={setDataResponse}/>}
-      {currentPage === 'success' && <Success pageRouter={pageRouter} dataResponse={dataResponse}/>}
-      {<Footer/>}
+      <main>
+          {currentPage === 'home' && <Home pageRouter={pageRouter} />}
+          {currentPage === 'order-pizza' && <OrderPizza pageRouter={pageRouter} initialData={initialData} data={data} setData={setData} setDataResponse={setDataResponse}/>}
+          {currentPage === 'success' && <Success pageRouter={pageRouter} dataResponse={dataResponse}/>}
+      </main>
+      <Footer/> 
     </>
   )
 }
