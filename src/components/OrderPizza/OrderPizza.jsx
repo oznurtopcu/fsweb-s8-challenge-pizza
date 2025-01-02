@@ -2,13 +2,12 @@ import Header from "../Header/Header";
 import OrderForm from "./OrderForm";
 
 export default function OrderPizza(props) {
-    const {pageRouter} = props;
+    const {pageRouter, initialData, data, setData, setDataResponse} = props;
     return (
-        <div className="order-page">
-            <Header/>
+        <>
             <main>
-                <OrderForm pageRouter={pageRouter}/>
+                <OrderForm pageRouter={pageRouter} initialData={initialData} data={data} setData={setData} setDataResponse={setDataResponse}/>
             </main>
-        </div>
+        </>
     )
 }

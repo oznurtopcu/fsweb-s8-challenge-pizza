@@ -11,20 +11,20 @@ import InputField from './InputField/InputField';
 import Summary from './Summary/Summary';
 import ProductInfo from './ProductInfo/ProductInfo';
 
-const initialData = {
+/*const initialData = {
     boyut: '',
     kalinlik:'',
     extra: [],
     isim: '',
     siparisNotu: '',
     adet: 1
-};
+};*/
 
 export default function OrderForm(props) {
-    const {pageRouter} = props;
+    const {pageRouter, initialData, data, setData, setDataResponse} = props;
     //state tanımlamaları
-    const [miktar, setMiktar] = useState(1);
-    const [data, setData] = useState(initialData);
+    const [miktar, setMiktar] = useState(data.adet);
+    //const [data, setData] = useState(initialData);
     const [errors, setErrors] = useState({});
     const [isValid, setIsValid] = useState(false);
     let history = useHistory();
@@ -61,12 +61,16 @@ export default function OrderForm(props) {
             setData({...data, extra: toppings.includes(value) ? toppings.filter((item) => item !== value) : [...toppings,value]});
         }else if(type === 'button'){
             if(value === 'azalt'){
-                setMiktar(miktar>1 ? miktar-1:1);
+                setMiktar((miktar > 1) ? miktar-1:1);
                 setData({...data, [name]: miktar});
             }
             if(value === 'arttir'){
-                setMiktar(miktar+1);
+                console.log("miktar::::::" + miktar);
+                setMiktar( miktar + 1 );
+                console.log("miktar::" + miktar);
                 setData({...data, [name]: miktar});
+                console.log("datamiktar::::::" + data.adet);
+                console.log(data);
             }
         }else {
             setData({...data, [name]:value});
@@ -77,10 +81,12 @@ export default function OrderForm(props) {
     //handlesubmit
     const handleSubmit = (event) => {
         event.preventDefault();
+        console.log(data);
         axios.post('https://reqres.in/api/pizza', data)
         .then(response => {
-            console.log(response.data);
+            //console.log(response.data);
             //history.push('/success');
+            setDataResponse(response.data);
             pageRouter('success')})
         .catch(error => console.error(error));
         setData(initialData);
