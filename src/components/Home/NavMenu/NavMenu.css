@@ -7,6 +7,15 @@ nav {
 
 nav a {
     text-decoration: none;
+    color: var(--primary-black);
     display: flex;
     align-items: center;
+    padding: 0.5rem;
+    gap: 0.5rem;
+}
+
+nav a:hover {
+    color: var(--primary-white);
+    background-color: var(--primary-gray);
+    border-radius: 20px;
 }
