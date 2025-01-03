@@ -1,5 +1,3 @@
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import { faTwitter } from '@fortawesome/free-brands-svg-icons';
 import './Footer.css';
 
 export default function Footer() {
@@ -21,15 +19,16 @@ export default function Footer() {
                         <p> +90 216 123 45 67</p>
                     </div>
                 </div>
+                
                 <div className="hot-menu">
                     <h5>Hot Menu</h5>
                     <ul>
-                        <li>Terminal Pizza</li>
-                        <li>Terminal Pizza</li>
-                        <li>useEffect Tavuklu Pizza</li>
-                        <li>Beyaz Console Pizza</li>
-                        <li>Testler Geçti Mutlu Burger</li>
-                        <li>Position Absolute Acı Burger</li>
+                        <li><a href="#">Terminal Pizza</a></li>
+                        <li><a href="#">5 Kişilik Hackathlon Pizza</a></li>
+                        <li><a href="#">useEffect Tavuklu Pizza</a></li>
+                        <li><a href="#">Beyaz Console Pizza</a></li>
+                        <li><a href="#">Testler Geçti Mutlu Burger</a></li>
+                        <li><a href="#">Position Absolute Acı Burger</a></li>
                     </ul>
                 </div>
                 <div className="instagram">
@@ -47,7 +46,7 @@ export default function Footer() {
             <hr />
             <div className="copyright">
                 <p>@2023 Teknolojik Yemekler.</p>
-                <FontAwesomeIcon icon={faTwitter}/>
+                {/*twitter icon gelecek*/}
             </div>
         </footer>
     );

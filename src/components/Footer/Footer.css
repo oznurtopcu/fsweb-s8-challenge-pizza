@@ -43,6 +43,10 @@ footer {
     gap: 1rem;
     padding: 0;
 }
+a {
+    text-decoration: none;
+    color: var(--primary-white);
+}
 
 .img-container {
     display: grid;
