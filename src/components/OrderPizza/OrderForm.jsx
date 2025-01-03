@@ -85,32 +85,39 @@ export default function OrderForm(props) {
     }
 
     return (
-        <div className='form-content'>
-            <Form onSubmit={handleSubmit}>
-                {/*ürün bilgisi bölümü*/}
-                <ProductInfo sampleData={sampleData}/>
+        <div className='form'>
+            <div className="info">
+                <img src={`../../../../images/iteration-2-images/pictures/form-banner.png`} alt="product" />
+            </div>
+            <div className='form-content'>
+                <Form onSubmit={handleSubmit}>
+
+                    {/*ürün bilgisi bölümü*/}
+                    <ProductInfo sampleData={sampleData}/>
                 
-                <div className='select-content'>
-                    {/*pizza boyutu seçim bölümü*/}
-                    <SizeSelector handleChange={handleChange}/>
+                    <div className='select-content'>
+                        {/*pizza boyutu seçim bölümü*/}
+                        <SizeSelector handleChange={handleChange}/>
+                        
+                        {/*hamur kalınlığı seçim bölümü*/}
+                        <ThicknessSelector handleChange={handleChange}/>
+                    </div>
+                
+                    {/*ekstra malzeme seçim bölümü*/}
+                    <ToppingSelector ekstraMalzeme={ekstraMalzeme} handleChange={handleChange}/>
                     
-                    {/*hamur kalınlığı seçim bölümü*/}
-                    <ThicknessSelector handleChange={handleChange}/>
-                </div>
-                
-                {/*ekstra malzeme seçim bölümü*/}
-                <ToppingSelector ekstraMalzeme={ekstraMalzeme} handleChange={handleChange}/>
-                
-                {/*isim ve sipariş notu input bölümü*/}
-                <InputField handleChange={handleChange}/>
+                    {/*isim ve sipariş notu input bölümü*/}
+                    <InputField handleChange={handleChange}/>
 
-                <hr/>
+                    <hr/>
 
-                <div className='order-card'>
-                    <Summary miktar={miktar} secimler={secimler} toplam={toplam} isValid={isValid} handleChange={handleChange}/>
-                </div>
-            </Form>
+                    <div className='order-card'>
+                        <Summary miktar={miktar} secimler={secimler} toplam={toplam} isValid={isValid} handleChange={handleChange}/>
+                    </div>
+                </Form>
+            </div>
         </div>
+
         
     );
 }
