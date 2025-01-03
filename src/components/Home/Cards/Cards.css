@@ -1,0 +1,21 @@
+.card-content {
+    max-width: 75rem;
+    gap: 1rem;
+    margin: 2rem;
+    display: flex;
+    flex-direction: row;
+}
+
+.card {
+    text-align: center;
+    font-weight: 600;
+}
+
+.card img {
+    margin: 1rem;
+}
+
+.card-order-sum {
+    display: flex;
+    justify-content: space-evenly;
+}
