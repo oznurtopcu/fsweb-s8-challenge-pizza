@@ -10,12 +10,14 @@ import { useState } from 'react';
 import Footer from './components/Footer/Footer';
 
 const initialData = {
+  pizza: '',
+  fiyat: '',
+  adet: 1,
   boyut: '',
   kalinlik:'',
   extra: [],
   isim: '',
   siparisNotu: '',
-  adet: 1
 };
 
 function App() {
@@ -27,18 +29,6 @@ function App() {
   const pageRouter = (page) => {
     setCurrentPage(page);
   }
-
-  /*<Switch>
-  <Route exact path="/">
-    <Home />
-  </Route>
-  <Route path="/order-pizza">
-    <OrderPizza />
-  </Route>
-  <Route path="/success">
-    <Success />
-  </Route>
-  </Switch>*/
 
   return (
     <>
@@ -54,3 +44,16 @@ function App() {
 }
 
 export default App;
+
+
+  /*<Switch>
+  <Route exact path="/">
+    <Home />
+  </Route>
+  <Route path="/order-pizza">
+    <OrderPizza />
+  </Route>
+  <Route path="/success">
+    <Success />
+  </Route>
+  </Switch>*/
