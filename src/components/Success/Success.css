@@ -14,6 +14,7 @@
     flex-direction: column;
     width: 35rem;
     color: var(--primary-white);
+    margin: 4rem;
 }
 
 .success-text {
@@ -47,6 +48,7 @@
 
 .order-summary {
     flex: 1 1 auto;
+    margin: 1rem;
     padding: 1rem;
     border: 0.2px solid var(--primary-white);
     border-radius: 10px;

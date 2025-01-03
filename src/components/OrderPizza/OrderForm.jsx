@@ -11,14 +11,6 @@ import InputField from './InputField/InputField';
 import Summary from './Summary/Summary';
 import ProductInfo from './ProductInfo/ProductInfo';
 
-/*const initialData = {
-    boyut: '',
-    kalinlik:'',
-    extra: [],
-    isim: '',
-    siparisNotu: '',
-    adet: 1
-};*/
 
 export default function OrderForm(props) {
     const {pageRouter, initialData, data, setData, setDataResponse} = props;
