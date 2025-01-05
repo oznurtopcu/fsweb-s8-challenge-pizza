@@ -64,6 +64,10 @@ export default function OrderForm(props) {
         }
     },[data.extra]);
 
+    useEffect(()=> {
+        setData({...data, adet: miktar});
+    }, [miktar]);
+
 
     const handleChange = (event) => {
 
