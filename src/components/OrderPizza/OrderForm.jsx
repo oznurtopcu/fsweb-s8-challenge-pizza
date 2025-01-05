@@ -81,26 +81,59 @@ export default function OrderForm(props) {
 
     const handleChange = (event) => {
 
-        const {name, value, type} = event.target;
+        const {name, value, type, checked} = event.target;
         console.log(name, type, value);
         //input type'a bağlı gerçekleşen handle change işlemleri
-        if(type === 'checkbox'){
-            const toppings = data[name];
-            setData({...data, extra: toppings.includes(value) ? toppings.filter((item) => item !== value) : [...toppings,value]});
-        }else if(type === 'button'){
+        if(name === 'adet'){
+
             if(value === 'azalt'){
                 setMiktar((miktar > 1) ? miktar-1:1);
-                setData({...data, [name]: miktar});
             }
             if(value === 'arttir'){
-                console.log("miktar::::::" + miktar);
                 setMiktar( miktar + 1 );
-                console.log("miktar::" + miktar);
-                setData({...data, [name]: miktar});
-                console.log("datamiktar::::::" + data.adet);
-                console.log(data);
             }
-        }else {
+        }
+        
+        if(name === 'boyut'){
+            setData({...data, [name]:value});
+            if(value !== "") {
+                setErrors({ ...errors, [name]: false });
+            }else {
+                setErrors({ ...errors, [name]: true });
+            }
+        }
+
+        if(name === 'kalinlik'){
+            setData({...data, [name]:value});
+            if(value !== "" && value  !== 'Seçiniz...') {
+                setErrors({ ...errors, [name]: false });
+            }else {
+                setErrors({ ...errors, [name]: true });
+            }
+        }
+
+        if(name === 'extra') {
+            const toppings = data[name];
+            //setData({...data, extra: toppings.includes(value) ? toppings.filter((item) => item !== value) : [...toppings,value]});
+
+            if(checked) {
+                setData({...data, [name]: [...toppings,value] })
+            }else {
+                setData({...data, [name]: toppings.filter((item) => item !== value) }) 
+            }
+            
+        }
+
+        if(name === 'isim'){
+            setData({...data, [name]:value});
+            if(value.trim().length>=3) {
+                setErrors({ ...errors, [name]: false });
+            }else {
+                setErrors({ ...errors, [name]: true });
+            }
+        }
+
+        if(name === 'siparisNotu'){
             setData({...data, [name]:value});
         }
 
