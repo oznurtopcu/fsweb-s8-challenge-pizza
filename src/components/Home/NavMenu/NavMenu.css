@@ -19,3 +19,15 @@ nav a:hover {
     background-color: var(--primary-gray);
     border-radius: 20px;
 }
+
+@media(max-width: 768px) {
+    nav {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    nav a {
+        width: 10rem;
+        margin: auto;
+    }
+}
