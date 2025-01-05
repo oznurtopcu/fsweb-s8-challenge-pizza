@@ -4,7 +4,9 @@ export default function Success(props) {
     const {pageRouter, dataResponse} = props;
     const {pizza, fiyat, adet, boyut, kalinlik, extra } = dataResponse;
 
-    console.log(dataResponse);
+    console.log("response data:::::::" , dataResponse);
+    const secimler = extra.length*5;
+    const toplam = (+fiyat + secimler)*adet;
 return (
     <div className='success-info'>
         <div className='success-card'>
@@ -27,11 +29,11 @@ return (
                 <p>Sipariş Toplamı</p>
                     <div id='addition'>
                         <p>Seçimler</p>
-                        <p>0₺</p>
+                        <p>{secimler}₺</p>
                     </div>
                     <div id='addition'>
                         <p>Toplam</p>
-                        <p>0₺</p>
+                        <p>{toplam}₺</p>
                     </div>
             </div> 
         </div>

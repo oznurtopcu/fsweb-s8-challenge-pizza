@@ -12,7 +12,7 @@ import { useLocation } from 'react-router-dom';
 
 const initialData = {
   pizza: '',
-  fiyat: '',
+  fiyat: 0,
   adet: 1,
   boyut: '',
   kalinlik:'',
