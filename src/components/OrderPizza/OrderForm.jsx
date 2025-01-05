@@ -25,16 +25,20 @@ const errorMessages = {
 export default function OrderForm(props) {
     const { initialData, data, setData, setDataResponse} = props;
     const [miktar, setMiktar] = useState(data.adet);
-    //const [data, setData] = useState(initialData);
-    const [errors, setErrors] = useState({});
-    const [isValid, setIsValid] = useState(false);
     let history = useHistory();
+    const [isValid, setIsValid] = useState(false);
+    const [errors, setErrors] = useState({
+        boyut: false,
+        kalinlik: false,
+        extra: false,
+        isim: false,
+    });
     //destruct işlemleri
-    const {fiyat, ekstraMalzeme} = sampleData;
+    const {baslik, fiyat} = sampleData;
 
     //hesaplamalar
     const secimler = (data.extra.length*5)*miktar;
-    const toplam = (+fiyat + secimler)*miktar;
+    const toplam = (+fiyat + (data.extra.length*5))*miktar;
 
     //formValidation
     const formValidation = () => {
