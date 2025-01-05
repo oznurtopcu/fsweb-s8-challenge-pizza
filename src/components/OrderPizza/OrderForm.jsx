@@ -55,6 +55,15 @@ export default function OrderForm(props) {
     useEffect(()=> {
         formValidation();
     }, [data]);
+    
+    useEffect(()=>{
+        if((data.extra.length>=4 && data.extra.length<=10)){
+            setErrors({ ...errors, extra: false });
+        }else {
+            setErrors({ ...errors, extra: true });
+        }
+    },[data.extra]);
+
 
     const handleChange = (event) => {
 
