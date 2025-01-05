@@ -139,6 +139,8 @@ export default function OrderForm(props) {
 
     }
 
+
+
     //handlesubmit
     const handleSubmit = (event) => {
         event.preventDefault();
@@ -162,27 +164,150 @@ export default function OrderForm(props) {
             <div className='form-content'>
                 <Form onSubmit={handleSubmit}>
 
-                    {/*ürün bilgisi bölümü*/}
-                    <ProductInfo sampleData={sampleData}/>
+                    {/*ürün bilgisi bölümü              -->                                     <ProductInfo sampleData={sampleData}/>*/}
+
+                    <h4 className='label'>{sampleData.baslik}</h4>
+                    <div className='price-info'>
+                        <h4 className='label'>{sampleData.fiyat}₺</h4>
+                        <p>{sampleData.puan}</p>
+                        <p>({sampleData.yorumSayisi})</p>
+                    </div>
+                    <p>{sampleData.aciklama}</p>
                 
                     <div className='select-content'>
-                        {/*pizza boyutu seçim bölümü*/}
-                        <SizeSelector handleChange={handleChange}/>
+                        {/*pizza boyutu seçim bölümü          -->           <SizeSelector handleChange={handleChange}/>          */}
+                        <FormGroup>
+                            <Label className='label'>
+                                Boyut seç*
+                            </Label>
+                            {sizeOption.map((item, index) => {
+                                return (<FormGroup key={index}>
+                                    <Input
+                                        name="boyut"
+                                        type="radio"
+                                        id={item}
+                                        value={item}
+                                        onChange={handleChange}
+                                        defaultChecked={index === 0}
+                                    />
+                                    <Label htmlFor={item}>
+                                        {item}
+                                    </Label>
+                                </FormGroup>)
+                            })}
+                        {errors.boyut && <p style={{color:"#dc3545"}}>{errorMessages.boyut}</p>}    
+                        </FormGroup> 
                         
-                        {/*hamur kalınlığı seçim bölümü*/}
-                        <ThicknessSelector handleChange={handleChange}/>
+                        {/*hamur kalınlığı seçim bölümü                    -->                  <ThicknessSelector handleChange={handleChange}/>*/}
+                        <FormGroup>
+                            <Label for="kalinlik" className='label'>
+                                Hamur Kalınlığı
+                            </Label>
+                            <Input
+                                id="kalinlik"
+                                name="kalinlik"
+                                type="select"
+                                data-cy='select'
+            
+                                onChange={handleChange}
+                                >
+                                    <option selected disabled hidden>
+                                        Seçiniz...
+                                    </option>
+                                    {thicknessOption.map((opt,index) => {
+                                        return(
+                                            <option key={index}>
+                                                {opt}
+                                            </option>
+                                        )
+                                    })}
+                            </Input>
+                            {false && <FormFeedback>{errorMessages.kalinlik}</FormFeedback>}
+                        </FormGroup>  
                     </div>
                 
-                    {/*ekstra malzeme seçim bölümü*/}
-                    <ToppingSelector ekstraMalzeme={ekstraMalzeme} handleChange={handleChange}/>
+                    {/*ekstra malzeme seçim bölümü                  -->                     <ToppingSelector ekstraMalzeme={ekstraMalzeme} handleChange={handleChange}/>*/}
+                    <div>
+                        <p className='label'>Ek Malzemeler</p>
+                        <p>En fazla 10 malzeme seçebilirsiniz.(Her seçim 5₺)</p>
+                    </div>
+                    <FormGroup className='checkbox-list'>
+                        {extraOption.map((malzeme,index) => {
+                            return (
+                            <FormGroup key={index} check>
+                                <Label check>
+                                <Input type="checkbox" name="extra" id="extra" value={malzeme} onChange={handleChange} data-cy='checkbox' />
+                                {' '}
+                                {malzeme}
+                                </Label>
+                            </FormGroup>);
+                            })
+                        }
+                    </FormGroup>
+                    {errors.extra && data.extra.length >= 1 && <p style={{color:"#dc3545"}}>{errorMessages.extra}</p>}
+
                     
-                    {/*isim ve sipariş notu input bölümü*/}
-                    <InputField handleChange={handleChange}/>
+                    {/*isim ve sipariş notu input bölümü          -->               <InputField handleChange={handleChange}/>*/}
+                    <FormGroup>
+                        <Label htmlFor="isim" className='label'>
+                            İsim
+                        </Label>
+                        <Input
+                            id="isim"
+                            name="isim"
+                            placeholder="Lütfen isminizi giriniz"
+                            type="text"
+                            onChange={handleChange}
+                            data-cy='isim'
+                            value={data.isim}
+                            
+                        />
+                        {errors.isim && <p style={{color:"#dc3545"}}>{errorMessages.isim}</p>}
+                    </FormGroup>
+
+                    <FormGroup>
+                        <Label htmlFor="siparisNotu" className='label'>
+                            Sipariş Notu
+                        </Label>
+                        <Input
+                            id="siparisNotu"
+                            name="siparisNotu"
+                            placeholder="Siparişine eklemek istediğin bir not var mı?"
+                            type="textarea"
+                            onChange={handleChange}
+                        />
+                    </FormGroup>
 
                     <hr/>
 
                     <div className='order-card'>
-                        <Summary miktar={miktar} secimler={secimler} toplam={toplam} isValid={isValid} handleChange={handleChange}/>
+                        {/*özet bölümü          -->          <Summary miktar={miktar} secimler={secimler} toplam={toplam} isValid={isValid} handleChange={handleChange}/>*/}
+
+                        {/*adet arttırıp azaltma bölümü*/}
+                        <div className='order-amount'>
+                                <button className='left' type="button" name="adet" value="azalt" onClick={handleChange}>-
+                                </button>
+                                <p>{miktar}</p>
+                                <button className='right' type="button" name="adet" value="arttir" onClick={handleChange}>+
+                                </button>
+                        </div>
+                        
+                        {/*sipariş toplamı bölümü*/}
+                        <div className='order-sum'>
+                            <div className='order-addition'>
+                                <p className='label'>Sipariş Toplamı</p>
+                                    <div id='addition'>
+                                        <p>Seçimler</p>
+                                        <p>{secimler}₺</p>
+                                    </div>
+                                    <div id='addition'>
+                                        <p>Toplam</p>
+                                        <p>{toplam}₺</p>
+                                    </div>
+                            </div>
+                            <button className='submitButton' data-cy='submitButton' disabled={!isValid}>SİPARİŞ VER</button>
+                        </div>
+
                     </div>
                 </Form>
             </div>
