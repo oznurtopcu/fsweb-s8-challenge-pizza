@@ -8,6 +8,7 @@ import Success from './components/Success/Success';
 import { Switch, Route } from 'react-router-dom';
 import { useState } from 'react';
 import Footer from './components/Footer/Footer';
+import { useLocation } from 'react-router-dom';
 
 const initialData = {
   pizza: '',
@@ -30,9 +31,11 @@ function App() {
     setCurrentPage(page);
   }*/
 
+    const location = useLocation();
+
   return (
     <>
-      <Header />
+      {location.pathname !== "/" && <Header />}
       <main>
         <Switch>
             <Route exact path="/">

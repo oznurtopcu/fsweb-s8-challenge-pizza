@@ -23,8 +23,7 @@ const errorMessages = {
 
 
 export default function OrderForm(props) {
-    const {pageRouter, initialData, data, setData, setDataResponse} = props;
-    //state tanımlamaları
+    const { initialData, data, setData, setDataResponse} = props;
     const [miktar, setMiktar] = useState(data.adet);
     //const [data, setData] = useState(initialData);
     const [errors, setErrors] = useState({});
