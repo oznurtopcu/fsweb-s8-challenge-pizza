@@ -64,8 +64,24 @@ a {
 
 @media (max-width: 768px) {
 
+    footer {
+        display: flex;
+        flex-direction: column;
+    }
+
     .contact {
         flex-direction: column;
+        text-align: center;
+        flex: 1 1 auto;
+    }
+
+    .address {
+        align-items: center;
+    }
+
+    .address #logo {
+        max-width: 10rem;
+        margin: auto;
     }
     
 }
