@@ -11,6 +11,16 @@ import InputField from './InputField/InputField';
 import Summary from './Summary/Summary';
 import ProductInfo from './ProductInfo/ProductInfo';
 
+const sizeOption = ["S", "M", "L"];
+const thicknessOption = ["İnce", "Normal", "Kalın"];
+const extraOption = ["Pepperoni", "Sosis", "Kanada Jambonu", "Tavuk Izgara", "Soğan", "Domates", "Mısır", "Sucuk", "Jalapeno", "Sarımsak", "Biber", "Ananas", "Kabak"];
+const errorMessages = {
+    boyut: "Lütfen pizza boyutu seçiniz!",
+    kalinlik: "Lütfen pizza kanlınlığını seçiniz!",
+    extra: "Minimum 4, maksimum 10 adet ekstra ürün seçilebilir!",
+    isim: "Girilen isim 3 karakterden daha az olamaz!",
+}
+
 
 export default function OrderForm(props) {
     const {pageRouter, initialData, data, setData, setDataResponse} = props;
