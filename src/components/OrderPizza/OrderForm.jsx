@@ -42,14 +42,13 @@ export default function OrderForm(props) {
 
     //formValidation
     const formValidation = () => {
-        const errorData = {};
-        if(!data.boyut) errorData.boyut = "Lütfen pizza boyutu seçiniz!";
-        if(!data.kalinlik || data.kalinlik  === 'Seçiniz...') errorData.kalinlik = "Lütfen pizza kanlınlığını seçiniz!";
-        if(data.extra.length<4) errorData.extra="En az 4 malzeme seçimi yapılmalıdır!";
-        if(data.extra.length>10) errorData.extra = "En fazla 10 malzeme seçimi yapılabilir!";
-        if(data.isim.length<3) errorData.isim = "Girilen isim 3 karakterden daha az olamaz!";
-        setErrors(errorData);
-        setIsValid(() => Object.keys(errorData).length === 0 ? true : false);
+        console.log(data);
+        console.log(errors);
+
+        const errorValues = Object.values(errors);
+        const isTrue = errorValues.includes(true);
+    
+        setIsValid(!isTrue);
     }
 
     //useEffect
