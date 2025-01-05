@@ -19,3 +19,10 @@
     display: flex;
     justify-content: space-evenly;
 }
+
+@media(max-width: 768px)  {
+    .card-content {
+        flex-direction: column;
+        align-items: center;
+    }
+}
