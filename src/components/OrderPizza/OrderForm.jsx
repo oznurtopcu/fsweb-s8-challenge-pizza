@@ -68,6 +68,16 @@ export default function OrderForm(props) {
         setData({...data, adet: miktar});
     }, [miktar]);
 
+    useEffect(()=> {
+        setData({
+            ...data,
+            fiyat: fiyat,
+            pizza: baslik,
+            boyut: sizeOption[0],
+        });
+    }, []);
+
+    
 
     const handleChange = (event) => {
 
