@@ -22,21 +22,29 @@ const initialData = {
 
 function App() {
 
-  const [currentPage, setCurrentPage] = useState('home');
+  //const [currentPage, setCurrentPage] = useState('home');
   const [data, setData] = useState(initialData);
   const [dataResponse, setDataResponse] = useState({});
 
-  const pageRouter = (page) => {
+  /*const pageRouter = (page) => {
     setCurrentPage(page);
-  }
+  }*/
 
   return (
     <>
-      {currentPage !== 'home' && <Header />}
+      <Header />
       <main>
-          {currentPage === 'home' && <Home pageRouter={pageRouter} />}
-          {currentPage === 'order-pizza' && <OrderPizza pageRouter={pageRouter} initialData={initialData} data={data} setData={setData} setDataResponse={setDataResponse}/>}
-          {currentPage === 'success' && <Success pageRouter={pageRouter} dataResponse={dataResponse}/>}
+        <Switch>
+            <Route exact path="/">
+              <Home />
+            </Route>
+            <Route path="/order-pizza">
+              <OrderPizza initialData={initialData} data={data} setData={setData} setDataResponse={setDataResponse}/>
+            </Route>
+            <Route path="/success">
+              <Success dataResponse={dataResponse}/>
+            </Route>
+        </Switch>
       </main>
       <Footer/> 
     </>
@@ -56,4 +64,14 @@ export default App;
   <Route path="/success">
     <Success />
   </Route>
-  </Switch>*/
+  </Switch>
+  
+  
+        {currentPage !== 'home' && <Header />}
+      <main>
+          {currentPage === 'home' && <Home pageRouter={pageRouter} />}
+          {currentPage === 'order-pizza' && <OrderPizza pageRouter={pageRouter} initialData={initialData} data={data} setData={setData} setDataResponse={setDataResponse}/>}
+          {currentPage === 'success' && <Success pageRouter={pageRouter} dataResponse={dataResponse}/>}
+      </main>
+
+  */

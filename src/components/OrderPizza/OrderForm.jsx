@@ -47,6 +47,7 @@ export default function OrderForm(props) {
     const handleChange = (event) => {
 
         const {name, value, type} = event.target;
+        console.log(name, type, value);
         //input type'a bağlı gerçekleşen handle change işlemleri
         if(type === 'checkbox'){
             const toppings = data[name];
@@ -77,9 +78,10 @@ export default function OrderForm(props) {
         axios.post('https://reqres.in/api/pizza', data)
         .then(response => {
             //console.log(response.data);
-            //history.push('/success');
+            history.push('/success');
             setDataResponse(response.data);
-            pageRouter('success')})
+            //pageRouter('success')
+        })
         .catch(error => console.error(error));
         setData(initialData);
     }
@@ -117,7 +119,5 @@ export default function OrderForm(props) {
                 </Form>
             </div>
         </div>
-
-        
     );
 }

@@ -20,8 +20,8 @@ export default function Home(props) {
                         <p>KOD ACIKTIRIR</p>
                         <p>PİZZA, DOYURUR</p>
                     </div>
-                    {/*<Link to='/order-pizza'><button className="submit-button">ACIKTIM</button></Link>*/}
-                    <button className="submit-button" onClick={() => pageRouter('order-pizza')}>ACIKTIM</button>
+                    <Link to='/order-pizza'><button className="submit-button">ACIKTIM</button></Link>
+                    {/*<button className="submit-button" onClick={() => pageRouter('order-pizza')}>ACIKTIM</button>*/}
                 </div>
             </div>
             <div className="main-content">
