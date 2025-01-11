@@ -138,6 +138,9 @@ export default function OrderPizza(props) {
     //handlesubmit
     const handleSubmit = (event) => {
         event.preventDefault();
+        if (!isValid) {
+            return;
+        }
         console.log(data);
         axios.post('https://reqres.in/api/pizza', data)
         .then(response => {
