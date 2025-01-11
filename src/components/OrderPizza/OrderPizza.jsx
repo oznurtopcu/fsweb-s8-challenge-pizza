@@ -4,7 +4,6 @@ import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import './OrderPizza.css';
-import './Summary/Summary.css';
 
 const sizeOption = ["S", "M", "L"];
 const thicknessOption = ["İnce", "Normal", "Kalın"];
@@ -69,6 +68,7 @@ export default function OrderPizza(props) {
             fiyat: fiyat,
             pizza: baslik,
             boyut: sizeOption[0],
+            kalinlik: thicknessOption[0]
         });
     }, []);
 
@@ -205,18 +205,18 @@ export default function OrderPizza(props) {
             
                                 onChange={handleChange}
                                 >
-                                    <option selected disabled hidden>
+                                    {/* <option selected disabled hidden>
                                         Seçiniz...
-                                    </option>
+                                    </option> */}
                                     {thicknessOption.map((opt,index) => {
                                         return(
-                                            <option key={index}>
+                                            <option key={index} selected={index === 0}>
                                                 {opt}
                                             </option>
                                         )
                                     })}
                             </Input>
-                            {false && <FormFeedback>{errorMessages.kalinlik}</FormFeedback>}
+                            {errors.kalinlik && <p style={{color:"#dc3545"}}>{errorMessages.kalinlik}</p>}
                         </FormGroup>  
                     </div>
                 
