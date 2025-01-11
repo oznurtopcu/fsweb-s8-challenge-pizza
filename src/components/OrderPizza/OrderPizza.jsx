@@ -1,22 +1,24 @@
 import {Form, FormGroup, Label, Input, Button, FormFeedback} from 'reactstrap';
 import sampleData from '../../sampleData';
+import formData from '../../formData';
 import { useEffect, useState } from 'react';
 import { useHistory } from 'react-router-dom';
 import axios from 'axios';
 import './OrderPizza.css';
 
-const sizeOption = ["S", "M", "L"];
-const thicknessOption = ["İnce", "Normal", "Kalın"];
-const extraOption = ["Pepperoni", "Sosis", "Kanada Jambonu", "Tavuk Izgara", "Soğan", "Domates", "Mısır", "Sucuk", "Jalapeno", "Sarımsak", "Biber", "Ananas", "Kabak"];
-const errorMessages = {
-    boyut: "Lütfen pizza boyutu seçiniz!",
-    kalinlik: "Lütfen pizza kanlınlığını seçiniz!",
-    extra: "Minimum 4, maksimum 10 adet ekstra ürün seçilebilir!",
-    isim: "Girilen isim 3 karakterden daha az olamaz!",
-}
+// const sizeOption = ["S", "M", "L"];
+// const thicknessOption = ["İnce", "Normal", "Kalın"];
+// const extraOption = ["Pepperoni", "Sosis", "Kanada Jambonu", "Tavuk Izgara", "Soğan", "Domates", "Mısır", "Sucuk", "Jalapeno", "Sarımsak", "Biber", "Ananas", "Kabak"];
+// const errorMessages = {
+//     boyut: "Lütfen pizza boyutu seçiniz!",
+//     kalinlik: "Lütfen pizza kanlınlığını seçiniz!",
+//     extra: "Minimum 4, maksimum 10 adet ekstra ürün seçilebilir!",
+//     isim: "Girilen isim 3 karakterden daha az olamaz!",
+// }
 
 export default function OrderPizza(props) {
-    const {pageRouter, initialData, data, setData, setDataResponse} = props;
+    const {initialData, data, setData, setDataResponse} = props;
+    const {sizeOption, thicknessOption, extraOption, errorMessages} = formData;
     const [miktar, setMiktar] = useState(data.adet);
     let history = useHistory();
     const [isValid, setIsValid] = useState(false);

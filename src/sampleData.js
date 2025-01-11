@@ -7,10 +7,4 @@ aciklama: "Frontent Dev olarak hala position:absolute kullanıyorsan bu çok ac�
 ekstraMalzeme: ["Pepperoni", "Sosis", "Kanada Jambonu", "Tavuk Izgara", "Soğan", "Domates", "Mısır", "Sucuk", "Jalapeno", "Sarımsak", "Biber", "Ananas", "Kabak"],
 };
 
-/*export const options = {
-    ekstraMalzeme: ["Pepperoni", "Sosis", "Kanada Jambonu", "Tavuk Izgara", "Soğan", "Domates", "Mısır", "Sucuk", "Jalapeno", "Sarımsak", "Biber", "Ananas", "Kabak"],
-    boyut: ["Küçük","Orta","Büyük"],
-    kalinlik: ["İnce", "Normal", "Kalın"]
-}*/
-
 export default sampleData;
