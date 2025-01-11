@@ -22,16 +22,10 @@ const initialData = {
 };
 
 function App() {
-
-  //const [currentPage, setCurrentPage] = useState('home');
   const [data, setData] = useState(initialData);
   const [dataResponse, setDataResponse] = useState({});
 
-  /*const pageRouter = (page) => {
-    setCurrentPage(page);
-  }*/
-
-    const location = useLocation();
+  const location = useLocation();
 
   return (
     <>
@@ -55,26 +49,3 @@ function App() {
 }
 
 export default App;
-
-
-  /*<Switch>
-  <Route exact path="/">
-    <Home />
-  </Route>
-  <Route path="/order-pizza">
-    <OrderPizza />
-  </Route>
-  <Route path="/success">
-    <Success />
-  </Route>
-  </Switch>
-  
-  
-        {currentPage !== 'home' && <Header />}
-      <main>
-          {currentPage === 'home' && <Home pageRouter={pageRouter} />}
-          {currentPage === 'order-pizza' && <OrderPizza pageRouter={pageRouter} initialData={initialData} data={data} setData={setData} setDataResponse={setDataResponse}/>}
-          {currentPage === 'success' && <Success pageRouter={pageRouter} dataResponse={dataResponse}/>}
-      </main>
-
-  */
