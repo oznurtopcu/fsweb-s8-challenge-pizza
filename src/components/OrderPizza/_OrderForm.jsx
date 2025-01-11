@@ -33,6 +33,7 @@ export default function OrderForm(props) {
         extra: false,
         isim: false,
     });
+
     //destruct işlemleri
     const {baslik, fiyat} = sampleData;
 
@@ -78,7 +79,7 @@ export default function OrderForm(props) {
     }, []);
 
     
-
+    //handleChange
     const handleChange = (event) => {
 
         const {name, value, type, checked} = event.target;
